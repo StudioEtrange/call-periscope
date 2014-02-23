@@ -32,7 +32,7 @@ PYCMD2="import os;os.rename('$PROCESSED_EPISODE_PATH' + os.sep + '$ORIGINAL_EPIS
 
 
 #Debug - too see if its beeing invoked at all
-date >> $CALL_PERISCOPE_LOG
+date > $CALL_PERISCOPE_LOG
 echo Pre-invoking periscope -v to check that it is ok...
 echo Periscope version: `$PERISCOPE_BIN --version` >> $CALL_PERISCOPE_LOG
 
