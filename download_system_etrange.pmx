@@ -1,0 +1,28 @@
+---
+name: Download System Etrange
+description: ''
+keywords: ''
+type: Default
+documentation: ''
+images:
+- name: timhaak_sabnzbd_latest
+  source: timhaak/sabnzbd:latest
+  type: Default
+  volumes_from:
+  - service: maxexcloo_data
+- name: timhaak_sickbeard
+  source: timhaak/sickbeard:latest
+  category: front manager
+  type: Default
+  environment:
+  - variable: SICKBEARD_VERSION
+    value: build-506
+- name: maxexcloo_data
+  source: maxexcloo/data:latest
+  category: data
+  type: Default
+  volumes:
+  - host_path: "/var/panamax/appdata/downloadetrange"
+    container_path: "/data"
+  - host_path: "/var/panamax/appdata/downloadetrange"
+    container_path: "/config"
